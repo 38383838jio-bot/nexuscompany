@@ -8,10 +8,10 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body style="background-color: black; color: white;">
-    <div style="position: fixed; top: 20px; right: 20px; z-index: 1000;">
+    <div style="position: fixed; top: 20px; left: 20px; z-index: 1000;">
         <i class="fas fa-bars" id="hamburger" style="font-size: 30px; color: white; cursor: pointer;"></i>
     </div>
-    <div id="sidebar" style="position: fixed; top: 0; right: -300px; width: 300px; height: 100%; background: #333; color: white; padding: 20px; transition: right 0.3s; z-index: 999;">
+    <div id="sidebar" style="position: fixed; top: 0; left: -300px; width: 300px; height: 100%; background: #333; color: white; padding: 20px; transition: left 0.3s; z-index: 9929;">
         <div style="margin-bottom: 20px;">
             <h3>Menu</h3>
         </div>
@@ -34,7 +34,7 @@
     <div class="today">
         <div class="lance">
             <b style="color: black;">
-                <i class="fas fa-wallet"></i> Balance
+                Balance
             </b>
             <br>
             <b>  
@@ -44,8 +44,8 @@
             </b>
         </div>
            <div class="lance" style="color: black;">
-            <b >
-                <i class="fas fa-chart-line"></i> Earning
+            <b>
+                Earning
             </b>
             <br>
             <b id="earning">
@@ -57,73 +57,72 @@
      <div class="today" style="color: black;">
         <div class="lance">
             <b>
-                <i class="fas fa-users"></i> Total Ref
+                 Ref Code
             </b>
             <br>
-            <b id="">
-                22
-            </b>
+            <b id="refCode">   
+            </b> 
         </div>
            <div class="lance">
             <b>
-                <i class="fas fa-money-bill-wave"></i> Total Withdrawal
+                Total Withdrawal
             </b>
             <br>
             <b>
-            10 $
+            10
             </b>
         </div>
-    </div>
+    </div> 
     <br>
     <hr>
     <br>
 <div class="today">
-
+      
            <div class="lance">
             <b>
              <a href="./depo.html" style="color: black; text-decoration: none;">
-                     <i class="fas fa-plus-circle"></i> Make a Deposit
+                <i class="fas fa-plus-circle"></i>     Make a Deposit
              </a>
             </b>
-            <br>
+            <br> 
         </div>
             <div class="lance">
             <b style="color: black;">
-                        <i class="fas fa-minus-circle"></i> Make a Withdraw
+                        Make a Withdraw  
             </b>
-            <br>
+            <br> 
         </div>
-    </div>
+    </div> 
     <br> 
     <div class="today">
-
+      
            <div class="lance">
            <a href="./accde.html" style="color: black; text-decoration: none;">
-            <b>
-                <i class="fas fa-user"></i> Account Details
+            <b > 
+              <i class="fas fa-user"></i>   Account Details
             </a>
-            <br>
+            <br> 
         </div>
         <div class="lance">
              <b></b>
             <a href="./myref.html" style="color: black; text-decoration: none;">
-           <i class="fas fa-share-alt"></i> My Code
+           My Ref   Code
             </a>
-            </b>
+            </b> 
         </div>
     </div>
     <br>
     <div class="today">
-
+      
            <div class="lance">
             <b style="color: black;">
-               <i class="fas fa-history"></i> Transaction History
+               Transction History
             </b>
-            <br>
+            <br> 
         </div>
             <div class="lances">
-            <button id="logout" style="background: none; border: none; color: white; font-weight: bold; cursor: pointer;">
-                <i class="fas fa-sign-out-alt"></i> Log Out
+            <button id="logout" style="background: none; border: none; color: inherit; font-weight: bold; cursor: pointer;">
+               <i class="fas fa-sign-out-alt"></i> Log Out
             </button>
             <br>
         </div>
@@ -131,7 +130,7 @@
     <br>
     <div class="today">   
     <div id="adminControls" style="text-align: center; display: none;">
-        <button style="background: #007bff; color: black; border: none; padding: 10px 20px; cursor: pointer;">Admin Control</button>
+        <button style="background: #007bff; color: white; border: none; padding: 10px 20px; cursor: pointer;">Admin Control</button>
     </div>
     </div>
     <br>
@@ -193,12 +192,12 @@
        const logoutLink = document.getElementById('logout-link');
 
        hamburger.addEventListener('click', () => {
-           sidebar.style.right = '0';
+           sidebar.style.left = '0';
            overlay.style.display = 'block';
        });
 
        overlay.addEventListener('click', () => {
-           sidebar.style.right = '-300px';
+           sidebar.style.left = '-300px';
            overlay.style.display = 'none';
        });
 
