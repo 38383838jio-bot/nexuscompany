@@ -42,11 +42,66 @@
                              <p>Balance: $${user.balance}</p>
                              <p>Admin: ${user.isAdmin ? 'Yes' : 'No'}</p>
                              <p>Ref Code: ${user.refCode}</p>
+                             <p>Bitcoin Wallet: ${user.bitcoinWallet}</p>
+                             <p>ETH Wallet: ${user.ethWallet}</p>
+                             <p>DOGE Address: ${user.dogeAddress}</p>
+                             <p>Created: ${new Date(user.createdAt).toLocaleDateString()}</p>
+                             <button onclick="addFunds('${user._id}')" style="background: green; color: white; border: none; padding: 5px 10px; margin: 5px;">Add Funds</button>
+                             <button onclick="minusFunds('${user._id}')" style="background: orange; color: white; border: none; padding: 5px 10px; margin: 5px;">Minus Funds</button>
+                             <button onclick="deleteUser('${user._id}')" style="background: red; color: white; border: none; padding: 5px 10px; margin: 5px;">Delete</button>
                          `;
                          grid.appendChild(card);
                      });
                  })
                  .catch(error => console.error('Error fetching users:', error));
+         }
+
+         function addFunds(userId) {
+             const amount = prompt('Enter amount to add:');
+             if (amount && !isNaN(amount)) {
+                 fetch(`http://localhost:5000/api/users/${userId}/balance`, {
+                     method: 'PUT',
+                     headers: { 'Content-Type': 'application/json' },
+                     body: JSON.stringify({ amount: parseFloat(amount) })
+                 })
+                 .then(response => response.json())
+                 .then(data => {
+                     alert(data.message);
+                     location.reload(); // Reload to update balances
+                 })
+                 .catch(error => console.error('Error:', error));
+             }
+         }
+
+         function minusFunds(userId) {
+             const amount = prompt('Enter amount to subtract:');
+             if (amount && !isNaN(amount)) {
+                 fetch(`http://localhost:5000/api/users/${userId}/balance`, {
+                     method: 'PUT',
+                     headers: { 'Content-Type': 'application/json' },
+                     body: JSON.stringify({ amount: -parseFloat(amount) })
+                 })
+                 .then(response => response.json())
+                 .then(data => {
+                     alert(data.message);
+                     location.reload(); // Reload to update balances
+                 })
+                 .catch(error => console.error('Error:', error));
+             }
+         }
+
+         function deleteUser(userId) {
+             if (confirm('Are you sure you want to delete this user?')) {
+                 fetch(`http://localhost:5000/api/users/${userId}`, {
+                     method: 'DELETE'
+                 })
+                 .then(response => response.json())
+                 .then(data => {
+                     alert(data.message);
+                     location.reload(); // Reload to update list
+                 })
+                 .catch(error => console.error('Error:', error));
+             }
          }
     </script>
 </body>
