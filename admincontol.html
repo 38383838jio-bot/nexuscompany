@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin control</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <br>
+      <div style="text-align: center;">
+               <b style="color: white;">
+            Admin Control <b id="frank">  </b>
+            </b>
+        </div>
+        <br>
+        <div class="today">
+            <div class="lance">
+                <b style="color: black;">
+                <a href="./users.html" style="color: black; text-decoration: none;"> 
+                Users <b>22</b>
+                <a>
+            </b>
+            <br>   
+        </div>
+           <div class="lance" style="color: black;">
+            <b>
+                  <a href="./depo.html" style="color: black; text-decoration: none;"> 
+                Update Wallets
+                  <a>
+            </b>
+            <br> 
+        </div>
+    </div>
+    
+    <br>
+        <div class="today">
+            <div class="lance">
+                <b style="color: black;">
+                <a href="./users.html" style="color: black; text-decoration: none;"> 
+                Withdrawal <b>22</b>
+                <a>
+            </b>
+            <br>   
+        </div>
+           <div class="lance" style="color: black;">
+            <b>
+                  <a href="./depo.html" style="color: black; text-decoration: none;"> 
+                Deposit Wallets
+                  <a>
+            </b>
+            <br> 
+        </div>
+    </div>
+    <script>
+        // Check if user is logged in and is admin
+        const user = JSON.parse(localStorage.getItem('user'));
+        if (!user) {
+            window.location.href = './login.html';
+        } else if (!user.isAdmin) {
+            window.location.href = './dash.html';
+        } else {
+            // Populate username
+            if (user.name) {
+                document.getElementById('frank').innerHTML = user.name;
+            }
+        }
+    </script>
+</body>
+</html>

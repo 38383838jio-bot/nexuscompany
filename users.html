@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Users</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body style="background-color: black; color: white;"> 
+    <br>
+    <div class="features">
+        <h2 style="color: white; text-align: center;">All Users</h2>
+        <div class="feature-grid" id="usersGrid">
+            <!-- Users will be displayed here -->
+        </div>
+    </div>
+    
+
+        <script>
+        // Check if user is logged in and is admin
+        const user = JSON.parse(localStorage.getItem('user'));
+        if (!user) {
+            window.location.href = './login.html';
+        } else if (!user.isAdmin) {
+             window.location.href = './dash.html';
+         } else {
+             // Populate username
+             if (user.name) {
+                 // No frank element, perhaps remove or add
+             }
+             // Fetch and display users
+             fetch('http://localhost:5000/api/users')
+                 .then(response => response.json())
+                 .then(users => {
+                     const grid = document.getElementById('usersGrid');
+                     users.forEach(user => {
+                         const card = document.createElement('div');
+                         card.className = 'feature-card';
+                         card.innerHTML = `
+                             <h3 style="color: #667eea;">${user.name}</h3>
+                             <p>Email: ${user.email}</p>
+                             <p>Balance: $${user.balance}</p>
+                             <p>Admin: ${user.isAdmin ? 'Yes' : 'No'}</p>
+                             <p>Ref Code: ${user.refCode}</p>
+                         `;
+                         grid.appendChild(card);
+                     });
+                 })
+                 .catch(error => console.error('Error fetching users:', error));
+         }
+    </script>
+</body>
+</html>
