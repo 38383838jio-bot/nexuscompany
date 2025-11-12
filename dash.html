@@ -139,16 +139,9 @@
        Alright Reserved Nexus Company 2010-2025
       </div>
    <script>
-       // Check if user is logged in
+       // Get user data from localStorage
        const user = JSON.parse(localStorage.getItem('user'));
-       if (!user) {
-           window.location.href = './login.html';
-       } else {
-           // Set admin for user "frank"
-           if (user.name === 'frank') {
-               user.isAdmin = true;
-               localStorage.setItem('user', JSON.stringify(user)); // Update localStorage
-           }
+       if (user) {
            // Populate username
            if (user.name) {
                document.getElementById('frank').innerHTML = user.name;

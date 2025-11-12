@@ -63,27 +63,16 @@
         </div>
       </a>
     <script>
-        // Check if user is logged in and is admin
-        const user = JSON.parse(localStorage.getItem('user'));
-        if (!user) {
-            window.location.href = './login.html';
-        } else if (!user.isAdmin) {
-            window.location.href = './dash.html';
-        } else {
-            // Populate username
-            if (user.name) {
-                document.getElementById('frank').innerHTML = user.name;
-            }
-            // Fetch user count
-            fetch('https://nodebackend-33q9.vercel.app/users', {
-                mode: 'cors'
+        // No localStorage validation
+        // Fetch user count
+        fetch('https://nodebackend-33q9.vercel.app/users', {
+            mode: 'cors'
+        })
+            .then(response => response.json())
+            .then(users => {
+                document.getElementById('userdigit').innerHTML = users.length;
             })
-                .then(response => response.json())
-                .then(users => {
-                    document.getElementById('userdigit').innerHTML = users.length;
-                })
-                .catch(error => console.error('Error fetching user count:', error));
-        }
+            .catch(error => console.error('Error fetching user count:', error));
     </script>
 </body>
 </html>

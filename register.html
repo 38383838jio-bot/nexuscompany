@@ -46,7 +46,7 @@
                 </div>
                 <br>
                 <div class="me1">
-                    <input type="text" name="refCode" class="input1" placeholder="Ref code Optional">
+                    <input type="text" name="who refered you Code" class="input1" placeholder="Ref code Optional">
                 </div>
                 <br>
                 <div class="me1">
@@ -61,6 +61,7 @@
                 </div>
             </form>
             <div id="errorMessage" style="color: red; text-align: center;"></div>
+            <div id="successMessage" style="color: green; text-align: center;"></div>
             <br>
                 <div class="mit"> 
                     <a  style="color: white; text-decoration: none;" href="./login.html">
@@ -87,11 +88,6 @@
 </body>
 </html>
     <script>
-        // Redirect if already logged in
-        if (localStorage.getItem('user')) {
-            window.location.href = './dash.html';
-        }
-
         document.getElementById('registerForm').addEventListener('submit', async (e) => {
             e.preventDefault();
 
@@ -126,10 +122,16 @@
 
                 if (response.ok) {
                     const result = await response.json();
-                    // Save user details to localStorage
+                    // Store user data to localStorage
                     localStorage.setItem('user', JSON.stringify(result.user));
-                    alert('Registration successful!');
-                    window.location.href = './login.html';
+                    // Clear error message
+                    document.getElementById('errorMessage').innerHTML = '';
+                    // Show success message
+                    document.getElementById('successMessage').innerHTML = 'Registration successful!';
+                    // Redirect after a short delay
+                    setTimeout(() => {
+                        window.location.href = `./dash.html?userId=${result.user._id}`;
+                    }, 2000);
                 } else {
                     const error = await response.json();
                     if (error.message.includes('duplicate key error') && error.message.includes('email_1')) {

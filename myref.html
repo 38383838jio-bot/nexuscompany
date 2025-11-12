@@ -18,28 +18,22 @@
         <p id="copyMessage" style="color: green; display: none;">Referral code copied to clipboard!</p>
     </div>
     <script>
-        // Check if user is logged in
+        // Get user data from localStorage
         const user = JSON.parse(localStorage.getItem('user'));
-        if (!user) {
-            window.location.href = './login.html';
-        } else {
-            // Populate ref code
-            if (user.refCode) {
-                document.getElementById('refCodeInput').value = user.refCode;
-            }
-
-            // Copy functionality
-            document.getElementById('copyButton').addEventListener('click', () => {
-                const refCodeInput = document.getElementById('refCodeInput');
-                refCodeInput.select();
-                document.execCommand('copy');
-                const copyMessage = document.getElementById('copyMessage');
-                copyMessage.style.display = 'block';
-                setTimeout(() => {
-                    copyMessage.style.display = 'none';
-                }, 2000);
-            });
+        if (user && user.refCode) {
+            document.getElementById('refCodeInput').value = user.refCode;
         }
+
+        // Copy functionality
+        document.getElementById('copyButton').addEventListener('click', () => {
+            const refCodeInput = document.getElementById('refCodeInput');
+            refCodeInput.select();
+            document.execCommand('copy');
+            document.getElementById('copyMessage').style.display = 'block';
+            setTimeout(() => {
+                document.getElementById('copyMessage').style.display = 'none';
+            }, 2000);
+        });
     </script>
 </body>
 </html>
