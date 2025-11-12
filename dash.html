@@ -5,9 +5,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard</title>
     <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
-<body style="background-color: white;">
-        <br>  
+<body style="background-color: black; color: white;">
+    <div style="position: fixed; top: 20px; right: 20px; z-index: 1000;">
+        <i class="fas fa-bars" id="hamburger" style="font-size: 30px; color: white; cursor: pointer;"></i>
+    </div>
+    <div id="sidebar" style="position: fixed; top: 0; right: -300px; width: 300px; height: 100%; background: #333; color: white; padding: 20px; transition: right 0.3s; z-index: 999;">
+        <div style="margin-bottom: 20px;">
+            <h3>Menu</h3>
+        </div>
+        <ul style="list-style: none; padding: 0;">
+            <li style="margin-bottom: 15px;"><a href="./depo.html" style="color: white; text-decoration: none;"><i class="fas fa-plus-circle"></i> Make a Deposit</a></li>
+            <li style="margin-bottom: 15px;"><a href="./accde.html" style="color: white; text-decoration: none;"><i class="fas fa-user"></i> Account Details</a></li>
+            <li style="margin-bottom: 15px;"><a href="./myref.html" style="color: white; text-decoration: none;"><i class="fas fa-share-alt"></i> My Refcode</a></li>
+            <li style="margin-bottom: 15px;"><a href="#" id="logout-link" style="color: white; text-decoration: none;"><i class="fas fa-sign-out-alt"></i> Log Out</a></li>
+        </ul>
+    </div>
+    <div id="overlay" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); display: none; z-index: 998;"></div>
+        <br>
+        <br>
         <div style="text-align: center;">
                <b>
             Welcome <b id="frank">  </b>
@@ -16,91 +33,97 @@
         <br>
     <div class="today">
         <div class="lance">
-            <b>
-                Balance
+            <b style="color: black;">
+                <i class="fas fa-wallet"></i> Balance
             </b>
             <br>
             <b>  
             </b> 
-             <b id="balance">
+             <b id="balance" style="color: black;">
                 $
             </b>
         </div>
-           <div class="lance">
-            <b>
-                Earning
+           <div class="lance" style="color: black;">
+            <b >
+                <i class="fas fa-chart-line"></i> Earning
             </b>
             <br>
-            <b id="">
-                $
+            <b id="earning">
+                0$
             </b>
         </div>
     </div>
     <br>
-     <div class="today">
+     <div class="today" style="color: black;">
         <div class="lance">
             <b>
-                Total Ref
+                <i class="fas fa-users"></i> Total Ref
             </b>
             <br>
-            <b id="refCode">   
-            </b> 
+            <b id="">
+                22
+            </b>
         </div>
            <div class="lance">
             <b>
-                 Withdrawal
+                <i class="fas fa-money-bill-wave"></i> Total Withdrawal
             </b>
             <br>
             <b>
-            10
+            10 $
             </b>
         </div>
-    </div> 
+    </div>
     <br>
     <hr>
     <br>
 <div class="today">
-      
+
            <div class="lance">
             <b>
-                Make A Deposit
-            </b>
-            <br> 
-        </div>
-            <div class="lance">
-            <b>
-                            Withdraw Now
-            </b>
-            <br> 
-        </div>
-    </div> 
-    <br> 
-    <div class="today">
-      
-          <a href="./accde.html" style="color: black; text-decoration: none;">
-            <b>My Ref Code
-            </a>
-        <div class="lance">
-            <a href="./myref.html" style="color: black; text-decoration: none;">
-            <b>My Ref Code
-            </a>
+             <a href="./depo.html" style="color: black; text-decoration: none;">
+                     <i class="fas fa-plus-circle"></i> Make a Deposit
+             </a>
             </b>
             <br>
-            <b ></b>
+        </div>
+            <div class="lance">
+            <b style="color: black;">
+                        <i class="fas fa-minus-circle"></i> Make a Withdraw
+            </b>
+            <br>
+        </div>
+    </div>
+    <br> 
+    <div class="today">
+
+           <div class="lance">
+           <a href="./accde.html" style="color: black; text-decoration: none;">
+            <b>
+                <i class="fas fa-user"></i> Account Details
+            </a>
+            <br>
+        </div>
+        <div class="lance">
+             <b></b>
+            <a href="./myref.html" style="color: black; text-decoration: none;">
+           <i class="fas fa-share-alt"></i> My Code
+            </a>
+            </b>
         </div>
     </div>
     <br>
     <div class="today">
-      
+
            <div class="lance">
-            <b>
-               Transction History
+            <b style="color: black;">
+               <i class="fas fa-history"></i> Transaction History
             </b>
-            <br> 
+            <br>
         </div>
             <div class="lances">
-            <button id="logout" style="background: none; border: none; color: inherit; font-weight: bold; cursor: pointer;">
-                Log Out
+            <button id="logout" style="background: none; border: none; color: white; font-weight: bold; cursor: pointer;">
+                <i class="fas fa-sign-out-alt"></i> Log Out
             </button>
             <br>
         </div>
@@ -108,7 +131,7 @@
     <br>
     <div class="today">   
     <div id="adminControls" style="text-align: center; display: none;">
-        <button style="background: #007bff; color: white; border: none; padding: 10px 20px; cursor: pointer;">Admin Control</button>
+        <button style="background: #007bff; color: black; border: none; padding: 10px 20px; cursor: pointer;">Admin Control</button>
     </div>
     </div>
     <br>
@@ -134,6 +157,18 @@
            // Populate balance
            if (user.balance !== undefined) {
                document.getElementById('balance').innerHTML = user.balance + '$';
+               // Calculate daily earning accumulation (5% per day)
+               const now = new Date();
+               const lastUpdate = user.lastEarningUpdate ? new Date(user.lastEarningUpdate) : now;
+               const daysPassed = Math.floor((now - lastUpdate) / (1000 * 60 * 60 * 24));
+               let earning = user.earning || 0;
+               if (daysPassed > 0) {
+                   earning += user.balance * 0.05 * daysPassed;
+                   user.earning = earning;
+                   user.lastEarningUpdate = now.toISOString();
+                   localStorage.setItem('user', JSON.stringify(user));
+               }
+               document.getElementById('earning').innerHTML = earning.toFixed(2) + '$';
            }
            // Populate ref code
            if (user.refCode) {
@@ -147,6 +182,28 @@
 
        // Logout functionality
        document.getElementById('logout').addEventListener('click', () => {
+           localStorage.clear();
+           window.location.href = './index.html';
+       });
+
+       // Hamburger menu toggle
+       const hamburger = document.getElementById('hamburger');
+       const sidebar = document.getElementById('sidebar');
+       const overlay = document.getElementById('overlay');
+       const logoutLink = document.getElementById('logout-link');
+
+       hamburger.addEventListener('click', () => {
+           sidebar.style.right = '0';
+           overlay.style.display = 'block';
+       });
+
+       overlay.addEventListener('click', () => {
+           sidebar.style.right = '-300px';
+           overlay.style.display = 'none';
+       });
+
+       logoutLink.addEventListener('click', (e) => {
+           e.preventDefault();
            localStorage.clear();
            window.location.href = './index.html';
        });
