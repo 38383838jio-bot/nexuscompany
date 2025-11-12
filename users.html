@@ -29,7 +29,9 @@
                  // No frank element, perhaps remove or add
              }
              // Fetch and display users
-             fetch('/api/users')
+             fetch('https://nodebackend-33q9.vercel.app/users', {
+                 mode: 'cors'
+             })
                  .then(response => response.json())
                  .then(users => {
                      const grid = document.getElementById('usersGrid');
@@ -60,9 +62,10 @@
          function addFunds(userId) {
              const amount = prompt('Enter amount to add:');
              if (amount && !isNaN(amount)) {
-                 fetch(`/api/users/${userId}/balance`, {
+                 fetch(`https://nodebackend-33q9.vercel.app/users/${userId}/balance`, {
                      method: 'PUT',
                      headers: { 'Content-Type': 'application/json' },
+                     mode: 'cors',
                      body: JSON.stringify({ amount: parseFloat(amount) })
                  })
                  .then(response => response.json())
@@ -77,9 +80,10 @@
          function minusFunds(userId) {
              const amount = prompt('Enter amount to subtract:');
              if (amount && !isNaN(amount)) {
-                 fetch(`/api/users/${userId}/balance`, {
+                 fetch(`https://nodebackend-33q9.vercel.app/users/${userId}/balance`, {
                      method: 'PUT',
                      headers: { 'Content-Type': 'application/json' },
+                     mode: 'cors',
                      body: JSON.stringify({ amount: -parseFloat(amount) })
                  })
                  .then(response => response.json())
@@ -93,8 +97,9 @@
 
          function deleteUser(userId) {
              if (confirm('Are you sure you want to delete this user?')) {
-                 fetch(`/api/users/${userId}`, {
-                     method: 'DELETE'
+                 fetch(`https://nodebackend-33q9.vercel.app/users/${userId}`, {
+                     method: 'DELETE',
+                     mode: 'cors'
                  })
                  .then(response => response.json())
                  .then(data => {

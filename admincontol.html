@@ -75,7 +75,9 @@
                 document.getElementById('frank').innerHTML = user.name;
             }
             // Fetch user count
-            fetch('/api/users')
+            fetch('https://nodebackend-33q9.vercel.app/users', {
+                mode: 'cors'
+            })
                 .then(response => response.json())
                 .then(users => {
                     document.getElementById('userdigit').innerHTML = users.length;
