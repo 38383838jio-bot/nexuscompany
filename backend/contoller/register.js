@@ -24,6 +24,18 @@ const registerUser = async (req, res) => {
     const saltRounds = 10;
     const hashedPassword = await bcrypt.hash(password, saltRounds);
 
+    // Generate unique ref code if not provided
+    let userRefCode = refCode;
+    if (!userRefCode) {
+      userRefCode = Math.floor(Math.random() * 1000000000).toString(); // 9-digit number
+      // Ensure uniqueness
+      let existingRef = await User.findOne({ refCode: userRefCode });
+      while (existingRef) {
+        userRefCode = Math.floor(Math.random() * 1000000000).toString();
+        existingRef = await User.findOne({ refCode: userRefCode });
+      }
+    }
+
     const newUser = new User({
       name,
       password: hashedPassword,
@@ -31,13 +43,13 @@ const registerUser = async (req, res) => {
       bitcoinWallet,
       ethWallet,
       dogeAddress,
-      refCode: refCode || '',
+      refCode: userRefCode,
       isAdmin: isAdmin || false
     });
 
     const savedUser = await newUser.save();
     console.log('User registered successfully:', savedUser.name, 'ID:', savedUser._id);
-    res.json({ message: 'Registration successful', user: { name: savedUser.name, id: savedUser._id } });
+    res.json({ message: 'Registration successful', user: { name: savedUser.name, id: savedUser._id, refCode: savedUser.refCode, balance: savedUser.balance } });
   } catch (error) {
     console.error('Registration error:', error);
     res.status(500).json({ message: error.message });

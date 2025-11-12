@@ -27,6 +27,7 @@ const loginUser = async (req, res) => {
       ethWallet: user.ethWallet,
       dogeAddress: user.dogeAddress,
       refCode: user.refCode,
+      balance: user.balance,
       isAdmin: user.isAdmin,
       createdAt: user.createdAt
     };

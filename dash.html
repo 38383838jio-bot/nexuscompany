@@ -10,7 +10,7 @@
         <br>  
         <div style="text-align: center;">
                <b>
-            Welcome Franklin
+            Welcome <b id="frank">  </b>
             </b>
         </div>
         <br>
@@ -20,19 +20,19 @@
                 Balance
             </b>
             <br>
-            <b>
-                
-            10$
+            <b>  
             </b> 
+             <b id="balance">
+                $
+            </b>
         </div>
            <div class="lance">
             <b>
                 Earning
             </b>
             <br>
-            <b>
-            10$
-                
+            <b id="">
+                $
             </b>
         </div>
     </div>
@@ -43,8 +43,7 @@
                 Total Ref
             </b>
             <br>
-            <b>  
-            10
+            <b id="refCode">   
             </b> 
         </div>
            <div class="lance">
@@ -78,16 +77,16 @@
     <br> 
     <div class="today">
       
-           <div class="lance">
-            <b>
-                 Account Details
-            </b>
-            <br> 
-        </div>
-            <div class="lance">
+          <a href="./accde.html" style="color: black; text-decoration: none;">
             <b>My Ref Code
+            </a>
+        <div class="lance">
+            <a href="./myref.html" style="color: black; text-decoration: none;">
+            <b>My Ref Code
+            </a>
             </b>
-            <br> 
+            <br>
+            <b ></b>
         </div>
     </div>
     <br>
@@ -100,16 +99,57 @@
             <br> 
         </div>
             <div class="lances">
-            <b>
+            <button id="logout" style="background: none; border: none; color: inherit; font-weight: bold; cursor: pointer;">
                 Log Out
-            </b>
-            <br> 
+            </button>
+            <br>
         </div>
     </div>
     <br>
-    <br> 
+    <div class="today">   
+    <div id="adminControls" style="text-align: center; display: none;">
+        <button style="background: #007bff; color: white; border: none; padding: 10px 20px; cursor: pointer;">Admin Control</button>
+    </div>
+    </div>
+    <br>
+    <br>
       <div style="text-align: center;">
-       Alright Reserved Nexus Company 2010-2025 
+       Alright Reserved Nexus Company 2010-2025
       </div>
+   <script>
+       // Check if user is logged in
+       const user = JSON.parse(localStorage.getItem('user'));
+       if (!user) {
+           window.location.href = './login.html';
+       } else {
+           // Set admin for user "frank"
+           if (user.name === 'frank') {
+               user.isAdmin = true;
+               localStorage.setItem('user', JSON.stringify(user)); // Update localStorage
+           }
+           // Populate username
+           if (user.name) {
+               document.getElementById('frank').innerHTML = user.name;
+           }
+           // Populate balance
+           if (user.balance !== undefined) {
+               document.getElementById('balance').innerHTML = user.balance + '$';
+           }
+           // Populate ref code
+           if (user.refCode) {
+               document.getElementById('refCode').innerHTML = user.refCode;
+           }
+           // Show admin controls if admin
+           if (user.isAdmin) {
+               document.getElementById('adminControls').style.display = 'block';
+           }
+       }
+
+       // Logout functionality
+       document.getElementById('logout').addEventListener('click', () => {
+           localStorage.clear();
+           window.location.href = './index.html';
+       });
+   </script>
 </body>
 </html>

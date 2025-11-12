@@ -17,6 +17,14 @@ body {
         border-radius: 10px;
         background-color: red;
     }
+     .lancess{
+         padding: 15px;
+        width: 40%;
+        color: white;
+        text-align: center;
+        border-radius: 10px;
+        background-color: green;
+    }
     .lance{
         padding: 15px;
         width: 40%;
@@ -372,6 +380,34 @@ body {
 /* ======== Tablets (601px to 900px) ======== */
 @media only screen and (min-width: 601px) and (max-width: 900px) {
       
+     .lancess{
+         padding: 15px;
+        width: 40%;
+        color: white;
+        text-align: center;
+        border-radius: 10px;
+        background-color: green;
+    }
+    .today{ 
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+    }
+     .lances{
+         padding: 15px;
+        width: 40%;
+        color: white;
+        text-align: center;
+        border-radius: 10px;
+        background-color: red;
+    }
+    .lance{
+        padding: 15px;
+        width: 40%;
+        text-align: center;
+        border-radius: 10px;
+        background-color: rgb(241, 241, 241);
+    }
     .input1{
         width: 100%;
         padding: 10px;
@@ -711,12 +747,39 @@ body {
 /* ======== Laptops / Desktops (901px to 1440px) ======== */
 @media only screen and (min-width: 901px) and (max-width: 1440px) {
 
+     .lancess{
+         padding: 15px;
+        width: 40%;
+        color: white;
+        text-align: center;
+        border-radius: 10px;
+        background-color: green;
+    }
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         } 
-        
+        .today{ 
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+    }
+     .lances{
+         padding: 15px;
+        width: 40%;
+        color: white;
+        text-align: center;
+        border-radius: 10px;
+        background-color: red;
+    }
+    .lance{
+        padding: 15px;
+        width: 40%;
+        text-align: center;
+        border-radius: 10px;
+        background-color: rgb(241, 241, 241);
+    }
     .nex{
         color:black;
         outline: none;
@@ -1036,6 +1099,34 @@ body {
             box-sizing: border-box;
         }
         
+     .lancess{
+         padding: 15px;
+        width: 40%;
+        color: white;
+        text-align: center;
+        border-radius: 10px;
+        background-color: green;
+    }
+        .today{ 
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+    }
+     .lances{
+         padding: 15px;
+        width: 40%;
+        color: white;
+        text-align: center;
+        border-radius: 10px;
+        background-color: red;
+    }
+    .lance{
+        padding: 15px;
+        width: 40%;
+        text-align: center;
+        border-radius: 10px;
+        background-color: rgb(241, 241, 241);
+    }
     .input1{
         width: 100%;
         padding: 10px;
