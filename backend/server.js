@@ -1,11 +1,15 @@
 require('dotenv').config();
 const express = require('express');
 const mongoose = require('mongoose');
+const path = require('path');
 const User = require('./models/User');
 const { registerUser } = require('./contoller/register');
 const { loginUser } = require('./contoller/login');
 
 const app = express();
+
+// Serve static files from the root directory
+app.use(express.static(path.join(__dirname, '..')));
 
 // Middleware
 app.use(express.json());
