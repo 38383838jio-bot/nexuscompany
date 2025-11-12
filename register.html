@@ -14,7 +14,7 @@
             </h1>
         </div>
 
-        <section>
+        <section class="forme">
             <form id="registerForm">
                 <br>
                 <div class="me1">
@@ -106,7 +106,7 @@
             data.isAdmin = false;
 
             try {
-                const response = await fetch('http://localhost:5000/api/users', {
+                const response = await fetch('http://localhost:5000/api/register', {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json'

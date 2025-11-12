@@ -372,6 +372,69 @@ body {
 /* ======== Tablets (601px to 900px) ======== */
 @media only screen and (min-width: 601px) and (max-width: 900px) {
       
+    .input1{
+        width: 100%;
+        padding: 10px;
+        border-radius: 5px;
+    }
+    .nexus{
+        color: black;
+    }
+    .nex{
+        color:black;
+        outline: none;
+        text-align: center;
+        font-size: 10px;
+    }
+    
+    .forme{
+        width: 70%;
+        margin: auto;
+    }
+    .me1{
+        width: 80%;
+        margin: auto;
+    }
+        .myheader{
+            width: 100%;
+            background-blend-mode: multiply;
+            background-color: rgba(0, 0, 0, 0.418);
+            background-image: url("./img/nwe222.avif");
+            background-size: cover;
+            animation-name: cade;
+            animation-duration: 5s;
+            animation-iteration-count: infinite;
+            height: 330px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+    .uprt{
+        width: 100%; 
+        display: flex;
+        justify-content: space-around;
+    }
+    .mit{
+        width: 70%;
+        margin: auto;
+    }
+    .mity{
+        background-color: black;
+        color: white;
+        padding: 10px;
+        outline: none;
+        border-radius: 4px;
+        width: 100%;
+    }
+        @keyframes cade {
+            10%{
+               background-image: url(/img/new.avif);
+            }
+            20%{
+               background-image: url(/img/three.jpg);
+            }
+        }
         * {
             margin: 0;
             padding: 0;
@@ -381,7 +444,17 @@ body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             line-height: 1.6;
             color: #333; 
+            background-color: black;
         }
+        
+          .uper{
+            border: #ffffff solid 2px;
+            padding: 10px;
+            width: 40%;
+            background-color: black;
+            color: white;
+            border-radius: 4px;
+          }
         header {
             position: relative;
             color: white;
@@ -643,11 +716,78 @@ body {
             padding: 0;
             box-sizing: border-box;
         } 
+        
+    .nex{
+        color:black;
+        outline: none;
+        text-align: center;
+        font-size: 10px;
+    }
+    .forme{
+        width: 40%;
+        margin: auto;
+    }
+    .input1{
+        width: 100%;
+        padding: 10px;
+        border-radius: 5px;
+    }
+        .myheader{
+            width: 60%;
+            margin: auto;
+            background-blend-mode: multiply;
+            background-color: rgba(0, 0, 0, 0.418);
+            background-image: url("./img/nwe222.avif");
+            background-size: cover;
+            animation-name: cade;
+            animation-duration: 5s;
+            animation-iteration-count: infinite;
+            height: 330px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        @keyframes cade {
+            10%{
+               background-image: url(/img/new.avif);
+            }
+            20%{
+               background-image: url(/img/three.jpg);
+            }
+        }
+        
+    .uprt{
+        width: 100%; 
+        display: flex;
+        justify-content: space-around;
+    }
+    .mit{
+        width: 70%;
+        margin: auto;
+    }
+    .mity{
+        background-color: black;
+        color: white;
+        padding: 10px;
+        outline: none;
+        border-radius: 4px;
+        width: 100%;
+    }
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             line-height: 1.6;
             color: #333; 
+            background-color: black;
         }
+        
+          .uper{
+            border: #ffffff solid 2px;
+            padding: 10px;
+            width: 40%;
+            background-color: black;
+            color: white;
+            border-radius: 4px;
+          }
         header {
             position: relative;
             color: white;
@@ -895,11 +1035,79 @@ body {
             padding: 0;
             box-sizing: border-box;
         }
+        
+    .input1{
+        width: 100%;
+        padding: 10px;
+        border-radius: 5px;
+    }
+    .forme{
+        width: 40%;
+        margin: auto;
+    }
+    
+    .nex{
+        color:black;
+        outline: none;
+        text-align: center;
+        font-size: 10px;
+    }
+        .myheader{
+            width:50%;
+            margin: auto;
+            background-blend-mode: multiply;
+            background-color: rgba(0, 0, 0, 0.418);
+            background-image: url("./img/nwe222.avif");
+            background-size: cover;
+            animation-name: cade;
+            animation-duration: 5s;
+            animation-iteration-count: infinite;
+            height: 330px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        @keyframes cade {
+            10%{
+               background-image: url(/img/new.avif);
+            }
+            20%{
+               background-image: url(/img/three.jpg);
+            }
+        }
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             line-height: 1.6;
             color: #333; 
+            background-color: black;
         }
+        
+    .uprt{
+        width: 100%; 
+        display: flex;
+        justify-content: space-around;
+    }
+    
+          .uper{
+            border: #ffffff solid 2px;
+            padding: 10px;
+            width: 40%;
+            background-color: black;
+            color: white;
+            border-radius: 4px;
+          }
+    .mit{
+        width: 70%;
+        margin: auto;
+    }
+    .mity{
+        background-color: black;
+        color: white;
+        padding: 10px;
+        outline: none;
+        border-radius: 4px;
+        width: 100%;
+    }
         header {
             position: relative;
             color: white;
