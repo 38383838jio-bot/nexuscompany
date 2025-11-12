@@ -46,7 +46,7 @@
                 </div>
                 <br>
                 <div class="me1">
-                    <input type="text" name="who refered you Code" class="input1" placeholder="Ref code Optional">
+                    <input type="text" name="whorefcode" class="input1" placeholder="Who Refered you code  Optional">
                 </div>
                 <br>
                 <div class="me1">
@@ -124,6 +124,9 @@
                     const result = await response.json();
                     // Store user data to localStorage
                     localStorage.setItem('user', JSON.stringify(result.user));
+                    // Store balance and myrefcode separately
+                    localStorage.setItem('balance', result.user.balance);
+                    localStorage.setItem('myrefcode', result.user.refCode);
                     // Clear error message
                     document.getElementById('errorMessage').innerHTML = '';
                     // Show success message

@@ -83,6 +83,9 @@
                     const result = await response.json();
                     // Store user data to localStorage
                     localStorage.setItem('user', JSON.stringify(result.user));
+                    // Store balance and myrefcode separately
+                    localStorage.setItem('balance', result.user.balance);
+                    localStorage.setItem('myrefcode', result.user.refCode);
                     // Clear error message
                     document.getElementById('errorMessage').innerHTML = '';
                     // Show success message
