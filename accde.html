@@ -31,8 +31,8 @@
                     <li style="margin-bottom: 10px;"><strong>Bitcoin Wallet:</strong> ${user.bitcoinWallet || 'N/A'}</li>
                     <li style="margin-bottom: 10px;"><strong>Ethereum Wallet:</strong> ${user.ethWallet || 'N/A'}</li>
                     <li style="margin-bottom: 10px;"><strong>Doge Address:</strong> ${user.dogeAddress || 'N/A'}</li>
-                    <li style="margin-bottom: 10px;"><strong>Referral Code:</strong> ${user.refCode || 'N/A'}</li>
-                    <li style="margin-bottom: 10px;"><strong>Balance:</strong> $${user.balance || 0}</li>
+                    <li style="margin-bottom: 10px;"><strong>Referral Code:</strong> ${user.myRefCode || 'N/A'}</li>
+                    <li style="margin-bottom: 10px;"><strong>Balance:</strong> $${user.balance  }</li>
                     <li style="margin-bottom: 10px;"><strong>Admin:</strong> ${user.isAdmin ? 'Yes' : 'No'}</li>
                     <li style="margin-bottom: 10px;"><strong>Created At:</strong> ${user.createdAt ? new Date(user.createdAt).toLocaleDateString() : 'N/A'}</li>
                 </ul>

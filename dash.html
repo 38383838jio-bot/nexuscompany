@@ -138,6 +138,10 @@
        Alright Reserved Nexus Company 2010-2025
       </div>
    <script>
+       // Validate if user exists in localStorage, redirect to login if not
+       if (!localStorage.getItem('user')) {
+           window.location.href = './login.html';
+       }
        // Get user data from localStorage
        const user = JSON.parse(localStorage.getItem('user'));
        if (user) {

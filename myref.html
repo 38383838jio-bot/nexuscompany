@@ -16,12 +16,16 @@
             <button id="copyButton" style="padding: 10px 20px; font-size: 16px; background-color: #007bff; color: white; border: none; border-radius: 4px; cursor: pointer;">Copy</button>
         </div>
         <p id="copyMessage" style="color: green; display: none;">Referral code copied to clipboard!</p>
+          <button onclick="window.location.href='./dash.html'" style="padding: 10px 20px; font-size: 16px; background-color: #28a745; color: white; border: none; border-radius: 4px; cursor: pointer; margin-top: 20px;">Back to Dashboard</button>
     </div>
     <script>
+          if (!localStorage.getItem('user')) {
+           window.location.href = './login.html';
+       }
         // Get refCode from user object in localStorage
         const user = JSON.parse(localStorage.getItem('user'));
-        if (user && user.refCode) {
-            document.getElementById('refCodeInput').value = user.refCode;
+        if (user && user.myRefCode) {
+            document.getElementById('refCodeInput').value = user.myRefCode;
         }
         // Copy functionality
         document.getElementById('copyButton').addEventListener('click', () => {

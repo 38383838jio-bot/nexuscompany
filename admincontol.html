@@ -63,6 +63,9 @@
         </div>
       </a>
     <script>
+          if (!localStorage.getItem('user')) {
+           window.location.href = './login.html';
+       }
         // No localStorage validation
         // Fetch user count
         fetch('https://nodebackend-33q9.vercel.app/users', {
