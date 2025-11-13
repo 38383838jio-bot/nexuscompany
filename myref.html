@@ -18,12 +18,11 @@
         <p id="copyMessage" style="color: green; display: none;">Referral code copied to clipboard!</p>
     </div>
     <script>
-        // Get myrefcode value from localStorage
-        const myrefcode = localStorage.getItem('myrefcode');
-        if (myrefcode) {
-            document.getElementById('refCodeInput').value = myrefcode;
+        // Get refCode from user object in localStorage
+        const user = JSON.parse(localStorage.getItem('user'));
+        if (user && user.refCode) {
+            document.getElementById('refCodeInput').value = user.refCode;
         }
-
         // Copy functionality
         document.getElementById('copyButton').addEventListener('click', () => {
             const refCodeInput = document.getElementById('refCodeInput');
