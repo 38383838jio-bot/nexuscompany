@@ -378,8 +378,7 @@ body {
         } 
         .your{
             width: 90%;
-            height: 200px;
-            background-color: red;
+            height: 200px; 
             margin: auto;
         }
 }
@@ -390,6 +389,12 @@ body {
             width: 70%;
             margin: auto;
          }
+         
+        .your{
+            width: 40%;
+            height: 200px; 
+            margin: auto;
+        }
      .lancess{
          padding: 15px;
         width: 40%;
@@ -716,8 +721,10 @@ body {
             margin-top: 20px;
         }
         .about {
-            background: #fff;
-            padding: 80px 20px;
+            background: #fff; 
+            width: 80%;
+            margin: auto;
+            border-radius: 5px;
             text-align: center;
         }
         .about h2 {
@@ -760,6 +767,12 @@ body {
             width: 40%;
             margin: auto;
          }
+         
+        .your{
+            width: 40%;
+            height: 200px; 
+            margin: auto;
+        }
      .lancess{
          padding: 15px;
         width: 40%;
@@ -1068,6 +1081,8 @@ body {
             background: #fff;
             padding: 80px 20px;
             text-align: center;
+            width: 20px;
+            margin: auto;
         }
         .about h2 {
             font-size: 2.5rem;
@@ -1109,6 +1124,12 @@ body {
             width: 40%;
             margin: auto;
          }
+         
+        .your{
+            width: 30%;
+            height: 200px; 
+            margin: auto;
+        }
         * {
             margin: 0;
             padding: 0;
@@ -1414,6 +1435,8 @@ body {
         .about {
             background: #fff;
             padding: 80px 20px;
+            width: 60%;
+            margin: auto;
             text-align: center;
         }
         .about h2 {
