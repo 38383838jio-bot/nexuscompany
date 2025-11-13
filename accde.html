@@ -22,6 +22,7 @@
             window.location.href = './login.html';
         } else {
             // Populate account details
+            const earning = localStorage.getItem('earning') || '0';
             const detailsDiv = document.getElementById('accountDetails');
             detailsDiv.innerHTML = `
                 <h2 style="color: #007bff;">User Information</h2>
@@ -32,7 +33,9 @@
                     <li style="margin-bottom: 10px;"><strong>Ethereum Wallet:</strong> ${user.ethWallet || 'N/A'}</li>
                     <li style="margin-bottom: 10px;"><strong>Doge Address:</strong> ${user.dogeAddress || 'N/A'}</li>
                     <li style="margin-bottom: 10px;"><strong>Referral Code:</strong> ${user.myRefCode || 'N/A'}</li>
+                    <li style="margin-bottom: 10px;"><strong>Who Referred Code:</strong> ${user.whorefcode || 'N/A'}</li>
                     <li style="margin-bottom: 10px;"><strong>Balance:</strong> $${user.balance  }</li>
+                    <li style="margin-bottom: 10px;"><strong>Earning:</strong> $${earning}</li>
                     <li style="margin-bottom: 10px;"><strong>Admin:</strong> ${user.isAdmin ? 'Yes' : 'No'}</li>
                     <li style="margin-bottom: 10px;"><strong>Created At:</strong> ${user.createdAt ? new Date(user.createdAt).toLocaleDateString() : 'N/A'}</li>
                 </ul>

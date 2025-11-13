@@ -25,8 +25,7 @@
         </ul>
     </div>
     <div id="overlay" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); display: none; z-index: 998;"></div>
-        <br>
-        <br>
+         
         <div style="text-align: center;">
                <b>
             Welcome <b id="frank">  </b>
@@ -50,7 +49,7 @@
             </b>
             <br>
             <b id="earning">
-                0$
+                
             </b>
         </div>
     </div>
@@ -66,12 +65,9 @@
         </div>
            <div class="lance">
             <b>
-                Total Withdrawal
+                  Transaction History
             </b>
-            <br>
-            <b>
-            10
-            </b>
+            <br> 
         </div>
     </div> 
     <br>
@@ -113,14 +109,7 @@
         </div>
     </div>
     <br>
-    <div class="today">
-      
-           <div class="lance">
-            <b style="color: black;">
-               Transction History
-            </b>
-            <br> 
-        </div>
+    <div class="today"> 
             <div class="lances">
             <button id="logout" style="background: none; border: none; color: inherit; font-weight: bold; cursor: pointer;">
                <i class="fas fa-sign-out-alt"></i> Log Out
@@ -129,7 +118,7 @@
         </div>
     </div>
     <br>
-    <div class="today">   
+    <div class="todays">   
     <div id="adminControls" style="text-align: center; display: none;">
         <button style="background: #007bff; color: white; border: none; padding: 10px 20px; cursor: pointer;">  <a href="./admincontol.html" style="color: white; text-decoration: none;">Admin Control<a></button>
     </div>
@@ -154,18 +143,11 @@
            // Populate balance
            if (user.balance !== undefined) {
                document.getElementById('balance').innerHTML = user.balance + '$';
-               // Calculate daily earning accumulation (5% per day)
-               const now = new Date();
-               const lastUpdate = user.lastEarningUpdate ? new Date(user.lastEarningUpdate) : now;
-               const daysPassed = Math.floor((now - lastUpdate) / (1000 * 60 * 60 * 24));
-               let earning = user.earning || 0;
-               if (daysPassed > 0) {
-                   earning += user.balance * 0.05 * daysPassed;
-                   user.earning = earning;
-                   user.lastEarningUpdate = now.toISOString();
-                   localStorage.setItem('user', JSON.stringify(user));
-               }
-               document.getElementById('earning').innerHTML = earning.toFixed(2) + '$';
+           }
+           // Populate earning from localStorage
+           const earning = localStorage.getItem('earning');
+           if (earning !== null) {
+               document.getElementById('earning').innerHTML = user.eaning + '$';
            }
            // Populate ref code
            if (user.myRefCode) {

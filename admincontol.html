@@ -18,7 +18,7 @@
             <div class="lance">
                 <b style="color: black;">
                 <a href="./users.html" style="color: black; text-decoration: none;">
-                Users <b id="userdigit"></b>
+                Total Users  = <b id="userdigit"></b>
                 <a>
             </b>
             <br>   
@@ -38,23 +38,22 @@
             <div class="lance">
                 <b style="color: black;">
                 <a href="./users.html" style="color: black; text-decoration: none;"> 
-                Withdrawal <b id="userdigit"> </b>
+                Transactions  <b id="userdigit"> </b>
                 <a>
             </b>
             <br>   
         </div>
            <div class="lance" style="color: black;">
             <b>
-                  <a href="./depo.html" style="color: black; text-decoration: none;"> 
-                Deposit Wallets
+                  <a href=" " style="color: black; text-decoration: none;"> 
+                Total User Balance = <b id="ball"> </b>
                   <a>
             </b>
             <br> 
         </div>
     </div>
       <br>
-
-      <div id="stats" style="text-align: center; color: white;"></div>
+ 
 
        <a href="./dash.html">
               <div class="lances">
@@ -65,8 +64,12 @@
          </div>
        </a>
     <script>
-          if (!localStorage.getItem('user')) {
+          const user = JSON.parse(localStorage.getItem('user'));
+          if (!user) {
             window.location.href = './login.html';
+        }
+        if (!user.isAdmin) {
+            window.location.href = './dash.html';
         }
         // Fetch user count
         fetch('https://nodebackend-33q9.vercel.app/stats', {
@@ -74,7 +77,8 @@
         })
             .then(response => response.json())
             .then(users => {
-                document.getElementById('userdigit').innerHTML = users.length;
+                document.getElementById('userdigit').innerHTML = users.totalUsers
+                document.getElementById('ball').innerHTML = users.totalBalance;
                 // Send response to stats element
                 document.getElementById('stats').innerHTML = JSON.stringify(users, null, 2);
             })

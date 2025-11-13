@@ -41,6 +41,12 @@ body {
         align-items: center;
         justify-content: space-around;
     }
+    
+    .todays{ 
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
     .uprt{
         width: 100%; 
         display: flex;

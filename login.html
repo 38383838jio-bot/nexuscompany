@@ -79,12 +79,18 @@
                 }); 
                 if (response.ok) {
                     const result = await response.json();
+                    // Ensure earning is set
+                    if (result.earning === undefined) {
+                        result.earning = 0;
+                    }
                     // Store user data to localStorage
                     localStorage.setItem('user', JSON.stringify(result.user));
                     // Store balance separately if defined
-                    if (result.user.balance !== undefined) {
-                        localStorage.setItem('balance', result.user.balance);
+                    if (result.balance !== undefined) {
+                        localStorage.setItem('balance', result.balance);
                     }
+                    // Store earning
+                    localStorage.setItem('earning', result.earning);
                     // Clear error message
                     document.getElementById('errorMessage').innerHTML = '';
                     // Show success message
