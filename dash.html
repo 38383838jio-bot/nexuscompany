@@ -62,13 +62,7 @@
             <br>
             <b id="refCode">   
             </b> 
-        </div>
-           <div class="lance">
-            <b>
-                  Transaction History
-            </b>
-            <br> 
-        </div>
+        </div> 
     </div> 
     <br> 
     <br>
@@ -82,11 +76,12 @@
             </b>
             <br> 
         </div>
+        <a href="./withdrwal.html" style="color: black; text-decoration: none;">
             <div class="lance">
-            <b style="color: black;">
-                        Make a Withdraw  
+            <b style="color: black;">   
+            <b >      Withdrawal now
             </b>
-            <br> 
+        </a> 
         </div>
     </div> 
     <br> 
@@ -115,8 +110,7 @@
             </button>
             <br>
         </div>
-             <div class="lances">
-           
+         <div class="lances"> 
             <button id="logout" style="background: none; border: none; color: inherit; font-weight: bold; cursor: pointer;">
                <i class="fas fa-sign-out-alt"></i> Log Out
             </button>
@@ -207,7 +201,7 @@
        document.getElementById('refresh').addEventListener('click', () => {
            const user = JSON.parse(localStorage.getItem('user'));
            if (user && user._id) {
-               fetch(`https://nodebackend-33q9.vercel.app/user/${user._id}`, {
+               fetch(`https://nodebackend-33q9.vercel.app/user/${user}`, {
                    mode: 'cors'
                })
                .then(response => response.json())
