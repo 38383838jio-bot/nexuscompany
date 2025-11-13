@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="./style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
-<body style="background-color: black; color: white;">
+<body style="background-color: black; color: white;" class="whity">
     <div style="position: fixed; top: 20px; left: 20px; z-index: 1000;">
         <i class="fas fa-bars" id="hamburger" style="font-size: 30px; color: white; cursor: pointer;"></i>
     </div>
@@ -54,7 +54,7 @@
     </div>
     <br>
      <div class="today" style="color: black;">
-        <div class="lance">
+        <div class="lance" id="cop">
             <b>
                  Ref Code
             </b>
@@ -166,8 +166,18 @@
                document.getElementById('earning').innerHTML = earning.toFixed(2) + '$';
            }
            // Populate ref code
-           if (user.refCode) {
-               document.getElementById('refCode').innerHTML = user.refCode;
+           if (user.myRefCode) {
+               document.getElementById('refCode').innerHTML = user.myRefCode;
+               // Make refCode clickable to copy
+               document.getElementById('refCode').style.cursor = 'pointer';
+               document.getElementById('refCode').addEventListener('click', () => {
+                   const refCodeText = user.myRefCode;
+                   navigator.clipboard.writeText(refCodeText).then(() => {
+                       alert('Ref code copied to clipboard!');
+                   }).catch(err => {
+                       console.error('Failed to copy: ', err);
+                   });
+               });
            }
            // Show admin controls if admin
            if (user.isAdmin) {

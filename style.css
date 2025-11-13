@@ -839,6 +839,8 @@ body {
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             line-height: 1.6;
+            width: 40%;
+            margin: auto;
             color: #333; 
             background-color: black;
         }
@@ -1168,7 +1170,9 @@ body {
         }
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
+            line-height: 1.6; 
+             width: 40%;
+            margin: auto;
             color: #333; 
             background-color: black;
         }
