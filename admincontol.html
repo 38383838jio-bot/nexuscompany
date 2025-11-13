@@ -6,7 +6,7 @@
     <title>Admin control</title>
     <link rel="stylesheet" href="./style.css">
 </head>
-<body>
+<body class="whity">
     <br>
       <div style="text-align: center;">
                <b style="color: white;">
@@ -53,27 +53,30 @@
         </div>
     </div>
       <br>
-       
-      <a href="./dash.html">
-             <div class="lances">
-            <button id=" " style="background: none; border: none; color: inherit; font-weight: bold; cursor: pointer;">
-               <i class="fas fa-sign-out-alt"></i>  Dash 
-            </button>
-            <br>
-        </div>
-      </a>
+
+      <div id="stats" style="text-align: center; color: white;"></div>
+
+       <a href="./dash.html">
+              <div class="lances">
+             <button id=" " style="background: none; border: none; color: inherit; font-weight: bold; cursor: pointer;">
+                <i class="fas fa-sign-out-alt"></i>  Dash
+             </button>
+             <br>
+         </div>
+       </a>
     <script>
           if (!localStorage.getItem('user')) {
-           window.location.href = './login.html';
-       }
-        // No localStorage validation
+            window.location.href = './login.html';
+        }
         // Fetch user count
-        fetch('https://nodebackend-33q9.vercel.app/users', {
+        fetch('https://nodebackend-33q9.vercel.app/stats', {
             mode: 'cors'
         })
             .then(response => response.json())
             .then(users => {
                 document.getElementById('userdigit').innerHTML = users.length;
+                // Send response to stats element
+                document.getElementById('stats').innerHTML = JSON.stringify(users, null, 2);
             })
             .catch(error => console.error('Error fetching user count:', error));
     </script>
