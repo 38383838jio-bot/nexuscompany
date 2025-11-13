@@ -6,10 +6,22 @@
     <title>Dashboard</title>
     <link rel="stylesheet" href="./style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-</head>
+    <style>
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+    </style>
+    </head>
 <script defer src="https://www.livecoinwatch.com/static/lcw-widget.js"></script> <div class="livecoinwatch-widget-5" lcw-base="USD" lcw-color-tx="#999999" lcw-marquee-1="coins" lcw-marquee-2="movers" lcw-marquee-items="10" ></div>
 
 <body style="background-color: black; color: white;" class="whity">
+    <div id="loadingDiv" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgb(0, 0, 0); color: white; display: flex; justify-content: center; align-items: center; z-index: 3000;">
+        <div style="text-align: center;">
+            <div style="border: 5px solid #f3f3f3; border-top: 5px solid #ff6b6b; border-radius: 50%; width: 50px; height: 50px; animation: spin 1s linear infinite; margin: 0 auto 20px;"></div>
+          
+        </div>
+    </div>
     <div style="position: fixed; top: 20px; left: 20px; z-index: 1000;">
         <i class="fas fa-bars" id="hamburger" style="font-size: 30px; color: white; cursor: pointer;"></i>
     </div>
@@ -94,10 +106,9 @@
             </a>
             <br> 
         </div>
-        <div class="lance">
-             <b></b>
+        <div class="lance"> 
             <a href="./myref.html" style="color: black; text-decoration: none;">
-           My Ref   Code
+                 My Ref   Code
             </a>
             </b> 
         </div>
@@ -129,6 +140,13 @@
        Alright Reserved Nexus Company 2010-2025
       </div>
    <script>
+       // Hide loading div after 3 seconds when page loads
+       window.addEventListener('load', () => {
+           setTimeout(() => {
+               document.getElementById('loadingDiv').style.display = 'none';
+           }, 3000); // 3 second delay
+       });
+
        // Validate if user exists in localStorage, redirect to login if not
        if (!localStorage.getItem('user')) {
            window.location.href = './login.html';
