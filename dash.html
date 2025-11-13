@@ -70,8 +70,7 @@
             <br> 
         </div>
     </div> 
-    <br>
-    <hr>
+    <br> 
     <br>
 <div class="today">
       
@@ -110,7 +109,14 @@
     </div>
     <br>
     <div class="today"> 
-            <div class="lances">
+            <div class="lancess">
+           <button id="refresh" style="background: none; border: none; color: inherit; font-weight: bold; cursor: pointer; margin-right: 20px;">
+               <i class="fas fa-refresh"></i> Refresh
+            </button>
+            <br>
+        </div>
+             <div class="lances">
+           
             <button id="logout" style="background: none; border: none; color: inherit; font-weight: bold; cursor: pointer;">
                <i class="fas fa-sign-out-alt"></i> Log Out
             </button>
@@ -121,8 +127,8 @@
     <div class="todays">   
     <div id="adminControls" style="text-align: center; display: none;">
         <button style="background: #007bff; color: white; border: none; padding: 10px 20px; cursor: pointer;">  <a href="./admincontol.html" style="color: white; text-decoration: none;">Admin Control<a></button>
-    </div>
-    </div>
+    </div> 
+    </div> 
     <br>
     <br>
       <div style="text-align: center;">
@@ -195,6 +201,29 @@
            e.preventDefault();
            localStorage.clear();
            window.location.href = './index.html';
+       });
+
+       // Refresh user details
+       document.getElementById('refresh').addEventListener('click', () => {
+           const user = JSON.parse(localStorage.getItem('user'));
+           if (user && user._id) {
+               fetch(`https://nodebackend-33q9.vercel.app/user/${user._id}`, {
+                   mode: 'cors'
+               })
+               .then(response => response.json())
+               .then(updatedUser => {
+                   localStorage.setItem('user', JSON.stringify(updatedUser));
+                   if (updatedUser.balance !== undefined) {
+                       localStorage.setItem('balance', updatedUser.balance);
+                   }
+                   if (updatedUser.earning !== undefined) {
+                       localStorage.setItem('earning', updatedUser.earning);
+                   }
+                   alert('User details refreshed!');
+                   location.reload();
+               })
+               .catch(error => console.error('Error refreshing user:', error));
+           }
        });
    </script>
 </body>
