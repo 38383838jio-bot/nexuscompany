@@ -8,7 +8,7 @@ body {
 }
 
 /* ======== Mobile Devices (up to 600px) ======== */
-@media only screen and (max-width: 600px) { 
+@media only screen and (max-width: 600px) {  
     .lances{
          padding: 15px;
         width: 40%;
@@ -1081,7 +1081,7 @@ body {
             background: #fff;
             padding: 80px 20px;
             text-align: center;
-            width: 20px;
+            width: 70%;
             margin: auto;
         }
         .about h2 {

@@ -6,7 +6,11 @@
     <title> NexusCompany</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="./style.css">
-</head>
+    <link rel="stylesheet" href="./slide.css">
+    <!-- TradingView Widget BEGIN -->
+    <script type="text/javascript" src="https://s3.tradingview.com/tv.js"></script>
+    <!-- TradingView Widget END -->
+    </head>
 <script defer src="https://www.livecoinwatch.com/static/lcw-widget.js"></script> <div class="livecoinwatch-widget-5" lcw-base="USD" lcw-color-tx="#999999" lcw-marquee-1="coins" lcw-marquee-2="movers" lcw-marquee-items="10" ></div>
 <body>
     <div id="loadingDiv" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgb(0, 0, 0); color: white; display: flex; justify-content: center; align-items: center; z-index: 2000;">
@@ -14,9 +18,10 @@
             <div style="border: 5px solid #f3f3f3; border-top: 5px solid #ff6b6b; border-radius: 50%; width: 50px; height: 50px; animation: spin 1s linear infinite; margin: 0 auto 20px;"></div>
         </div>
     </div> 
+    
     <header class="myheader">
        <div>
-         <h1 style="color: white; font-size: 45px;">Powerful Features</h1>
+         <h1 style="color: white; font-size: 30px; text-align: center;">Nexus Company</h1>
         <p style="text-align: center;">
             Today we are making an <br> inpert to our trusted investors <br>
             Start up a trade and start Earning in crypto
@@ -63,9 +68,16 @@
             </div>
         </div>
     </section>
-                  
+
+    <section id="crypto-chart" class="crypto-chart">
+        <h2>Live Cryptocurrency Chart</h2>
+        <div id="tradingview-widget-container">
+            <div id="tradingview-widget"></div>
+        </div>
+    </section>
+
     <section id="plans" class="plans">
-        <h2>Investment Plans</h2>
+        <h2 style="color: white;">Investment Plans</h2>
         <div class="plan-grid">
        <a href="./depo.html" style="color: white; text-decoration: none;">
              <div class="plan-card">
@@ -112,11 +124,11 @@
         </div>
     </section>
     <section id="about" class="about">
-        <h2 style="margin: 0px; padding: 0px;">About Nexus</h2>
-        <p>NexusCompany is your trusted partner in wealth management. With years of experience in financial markets and cutting-edge technology, we provide individuals and institutions with the tools they need to achieve their financial goals. Our platform combines sophisticated analytics with user-friendly interfaces to make investing accessible to everyone.</p>
-    </section>  
+        <h2 style="margin: 0px; padding: 0px; color:  ;  ">About Nexus</h2>
+        <p  >NexusCompany is your trusted partner in wealth management. With years of experience in financial markets and cutting-edge technology, we provide individuals and institutions with the tools they need to achieve their financial goals. Our platform combines sophisticated analytics with user-friendly interfaces to make investing accessible to everyone.</p>
+    </section>
     <br>
-        <h2 style="margin: 0px; padding: 0px; text-align: center;">our Certisficate</h2>
+        <h2 style="margin: 0px; padding: 0px; text-align: center; color: white;">Our Certisficate</h2>
         <br>
     <div class="your">
         <img src="./img/cert.png" style="width: 100%; height: fit-content;" alt="">
@@ -177,6 +189,36 @@
             0% { transform: rotate(0deg); }
             100% { transform: rotate(360deg); }
         }
+
+        .crypto-chart {
+            padding: 60px 20px;
+            text-align: center;
+            background: #111;
+        }
+
+        .crypto-chart h2 {
+            color: white;
+            margin-bottom: 40px;
+        }
+
+        #tradingview-widget-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        #tradingview-widget {
+            width: 100%;
+            height: 400px;
+        }
+
+        @media (max-width: 768px) {
+            #tradingview-widget {
+                height: 300px;
+            }
+        }
+
+
+
     </style>
     <script>
         // Hide loading div and show welcome with delay when page loads
@@ -202,10 +244,27 @@
             });
         });
 
+        // Initialize TradingView widget
+        new TradingView.widget({
+            "width": "100%",
+            "height": 400,
+            "symbol": "BINANCE:BTCUSDT",
+            "interval": "D",
+            "timezone": "Etc/UTC",
+            "theme": "dark",
+            "style": "1",
+            "locale": "en",
+            "toolbar_bg": "#f1f3f6",
+            "enable_publishing": false,
+            "allow_symbol_change": true,
+            "container_id": "tradingview-widget"
+        });
+
         // Hamburger menu toggle
         document.querySelector('.hamburger').addEventListener('click', () => {
             document.querySelector('nav').classList.toggle('nav-open');
         });
+
     </script>
 </body>
 </html>
