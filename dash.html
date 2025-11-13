@@ -168,9 +168,9 @@
            // Populate ref code
            if (user.myRefCode) {
                document.getElementById('refCode').innerHTML = user.myRefCode;
-               // Make refCode clickable to copy
-               document.getElementById('refCode').style.cursor = 'pointer';
-               document.getElementById('refCode').addEventListener('click', () => {
+               // Make cop element clickable to copy refCode
+               document.getElementById('cop').style.cursor = 'pointer';
+               document.getElementById('cop').addEventListener('click', () => {
                    const refCodeText = user.myRefCode;
                    navigator.clipboard.writeText(refCodeText).then(() => {
                        alert('Ref code copied to clipboard!');
