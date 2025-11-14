@@ -37,20 +37,17 @@
             <br>
                 <div class="mit"> 
                     <a  style="color: white; text-decoration: none;" href="./register.html">
-                <button class="mity">
-                   
+                <button class="mity"> 
                          <b> 
                         Register
                     </b>
                 </button>
             </a>
-                </div>
-                
+                </div> 
             <br>
                     <div class="mit"> 
                         <a  style="color: white; text-decoration: none;" href="./forgeting.html">
-                <button class="mity">
-                   
+                <button class="mity"> 
                          <b> 
                         Forgetin password
                     </b>
@@ -59,9 +56,9 @@
                 </div>
         </section>
 </body>
-</html>
-    <script>
+<script>
         document.getElementById('loginForm').addEventListener('submit', async (e) => {
+
             e.preventDefault();
 
             // Clear previous error messages
@@ -79,7 +76,9 @@
                     mode: 'cors',
                     body: JSON.stringify(data)
                 });
+
                 console.log('Response received, status:', response.status, 'ok:', response.ok);
+
                 if (response.ok) {
                     console.log('Processing successful login response');
                     const result = await response.json();
@@ -116,3 +115,4 @@
             }
         });
     </script>
+    </html>
