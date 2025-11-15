@@ -219,7 +219,7 @@
        document.getElementById('refresh').addEventListener('click', () => {
            const user = JSON.parse(localStorage.getItem('user'));
            if (user && user._id) {
-               fetch(`https://nodebackend-33q9.vercel.app/user/${user}`, {
+               fetch(`https://newnodebackend1.vercel.app/user/${user}`, {
                    mode: 'cors'
                })
                .then(response => response.json())
