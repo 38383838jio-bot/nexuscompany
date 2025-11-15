@@ -1,0 +1,16 @@
+{
+  "rewrites": [
+    { "source": "/", "destination": "/index.html" },
+    { "source": "/login", "destination": "/login/index.html" },
+    { "source": "/register", "destination": "/register/index.html" },
+    { "source": "/dash", "destination": "/dash/index.html" },
+    { "source": "/forgeting", "destination": "/forgeting/index.html" },
+    { "source": "/depo", "destination": "/depo/index.html" },
+    { "source": "/withdraw", "destination": "/withdraw/index.html" },
+    { "source": "/accde", "destination": "/accde/index.html" },
+    { "source": "/admincontrol", "destination": "/admincontrol/index.html" },
+    { "source": "/confirmdeposit", "destination": "/confirmdeposit/index.html" },
+    { "source": "/users", "destination": "/users/index.html" },
+    { "source": "/myref", "destination": "/myref/index.html" }
+  ]
+} 
