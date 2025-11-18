@@ -1,9 +1,16 @@
 function StartCode() {
          const earning = document.getElementById("earning");
-         const frank = document.getElementById("frank");
+         const dashin = document.getElementById("frank");
          const ballance = document.getElementById("balance");
-         const frank1 = 'franklin' 
-    if (frank.innerText == frank1) {
+         const franklin = 'franklin' 
+         const frank = "frank"
+              
+    if (dashin.innerText == frank) {
+        earning.innerHTML="20"
+        ballance.innerHTML="100"
+    }
+    
+    if (dashin.innerText == franklin) {
         earning.innerHTML="200"
         ballance.innerHTML="500"
     }
