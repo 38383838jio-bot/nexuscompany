@@ -208,11 +208,9 @@
        overlay.addEventListener('click', () => {
            sidebar.style.left = '-300px';
            overlay.style.display = 'none';
-       });
-
+       }); 
        logoutLink.addEventListener('click', (e) => {
-           e.preventDefault();
-           localStorage.clear();
+           e.preventDefault(); 
            window.location.href = './index.html';
        });
 
