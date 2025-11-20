@@ -4,7 +4,7 @@ function StartCode() {
          const ballance = document.getElementById("balance");
          const franklin = 'franklin' 
          const frank = "frank"
-        const sheikh = "sheikh "     
+        const sheikh = "sheikh"     
 
         if (dashin.innerHTML == sheikh) { 
         earning.innerHTML="450"
