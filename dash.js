@@ -6,8 +6,7 @@ function StartCode() {
          const frank = "frank"
         const sheikh = "sheikh "     
 
-        if (dashin.innerHTML == sheikh) {
-            
+        if (dashin.innerHTML == sheikh) { 
         earning.innerHTML="450"
         ballance.innerHTML="50"
         }
