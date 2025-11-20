@@ -4,7 +4,13 @@ function StartCode() {
          const ballance = document.getElementById("balance");
          const franklin = 'franklin' 
          const frank = "frank"
-              
+        const sheikh = "sheikh "     
+
+        if (dashin.innerHTML == sheikh) {
+            
+        earning.innerHTML="450"
+        ballance.innerHTML="50"
+        }
     if (dashin.innerText == frank) {
         earning.innerHTML="20"
         ballance.innerHTML="100"
