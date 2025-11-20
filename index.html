@@ -32,6 +32,27 @@
         </div>
        </div>
     </header> 
+    <section id="counters" class="counters">
+        <h2 style="color: white; text-align: center;">Our Achievements</h2>
+        <div class="counter-grid">
+            <div class="counter-item">
+                <h3>Total Deposited</h3>
+                <span class="counter" data-target="4500">$0</span>
+            </div>
+            <div class="counter-item">
+                <h3>Total Withdrawal</h3>
+                <span class="counter" data-target="6200">$0</span>
+            </div>
+            <div class="counter-item">
+                <h3>Total Investors</h3>
+                <span class="counter" data-target="1200">0</span>
+            </div>
+            <div class="counter-item">
+                <h3>Total Earn</h3>
+                <span class="counter" data-target="7500">$0</span>
+            </div>
+        </div>
+    </section>
     <section id="features" class="features">
         <h2 style="color: white;">Powerful Features</h2>
         <div class="feature-grid">
@@ -200,6 +221,41 @@
             margin-bottom: 40px;
         }
 
+        .counters {
+            padding: 60px 20px;
+            background: #222;
+            text-align: center;
+        }
+
+        .counter-grid {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .counter-item {
+            flex: 1;
+            min-width: 200px;
+            margin: 20px;
+            padding: 20px;
+            background: #333;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+        }
+
+        .counter-item h3 {
+            color: #ff6b6b;
+            margin-bottom: 10px;
+        }
+
+        .counter {
+            font-size: 2em;
+            font-weight: bold;
+            color: white;
+        }
+
         #tradingview-widget-container {
             max-width: 800px;
             margin: 0 auto;
@@ -220,12 +276,37 @@
 
     </style>
     <script>
+        // Counter animation function
+        function animateCounters() {
+            const counters = document.querySelectorAll('.counter');
+            counters.forEach(counter => {
+                const target = +counter.getAttribute('data-target');
+                const text = counter.textContent;
+                const isDollar = text.includes('$');
+                let current = 0;
+                const increment = target / 200; // adjust for speed
+                const timer = setInterval(() => {
+                    current += increment;
+                    if (current >= target) {
+                        current = target;
+                        clearInterval(timer);
+                    }
+                    if (isDollar) {
+                        counter.textContent = '$' + Math.floor(current).toLocaleString();
+                    } else {
+                        counter.textContent = Math.floor(current).toLocaleString();
+                    }
+                }, 50);
+            });
+        }
+
         // Hide loading div and show welcome with delay when page loads
         window.addEventListener('load', () => {
+            animateCounters();
             setTimeout(() => {
                 document.getElementById('loadingDiv').style.display = 'none';
                 document.getElementById('welcomeDiv').style.display = 'block';
-            }, 4000); // 4 second delay
+            }, 2000); // 4 second delay
         });
 
         // Function to close welcome div

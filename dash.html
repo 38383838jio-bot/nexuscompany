@@ -49,19 +49,24 @@
             <b style="color: black;">
                 Balance
             </b>
-            <br>
-            <b>  
+            <br> 
+             <b style="color: black;">  
+                $
             </b> 
              <b id="balance" style="color: black;"> 
-            </b>
+             
+            </b> 
         </div>
            <div class="lance" style="color: black;">
             <b>
                 Earning
             </b>
             <br>
+               <b>  
+                   $
+            </b> 
             <b id="earning">
-                
+               
             </b>
         </div>
     </div>
@@ -145,7 +150,7 @@
        window.addEventListener('load', () => {
            setTimeout(() => {
                document.getElementById('loadingDiv').style.display = 'none';
-           }, 3000); // 3 second delay
+           }, 2000); // 3 second delay
        });
 
        // Validate if user exists in localStorage, redirect to login if not
