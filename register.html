@@ -106,8 +106,7 @@
             if (data.password !== data.confirmPassword) {
                 document.getElementById('errorMessage').innerHTML = 'Passwords do not match';
                 return;
-            }
-
+            } 
             // Remove confirmPassword from data
             delete data.confirmPassword;
             delete data.terms; // Remove terms checkbox
