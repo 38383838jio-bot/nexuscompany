@@ -41,10 +41,11 @@
         </section>
 <script>
 window.addEventListener('DOMContentLoaded', function() {
-   const username = localStorage.getItem('username');
-   const email = localStorage.getItem('email');
-   if (username) document.getElementById('username').value = username;
-   if (email) document.getElementById('email').value = email;
+    const user = JSON.parse(localStorage.getItem('user'));
+    if (user) {
+        document.getElementById('username').value = user.username;
+        document.getElementById('email').value = user.email;
+    }
 });
 </script>
 </body>
