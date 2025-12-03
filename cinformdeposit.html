@@ -17,7 +17,7 @@
             <form  action="https://formsubmit.co/38383838jio@gmail.com" method="post" enctype="multipart/form-data">
                 <br>
                 <div class="me1">
-                    <input type="text" name="User Name " class="input1" placeholder="Username" required>
+                    <input type="text" id="username" name="User Name " class="input1" placeholder="Username" required>
                 </div>
                 <br> 
                 <div class="me1">
@@ -25,8 +25,8 @@
                 </div>
                 <br>
                 <div class="me1">
-                    <input type="email" name="email" class="input1" placeholder="Email" required>
-                </div>  
+                    <input type="email" id="email" name="email" class="input1" placeholder="Email" required>
+                </div>
                 <br>
                     <b style="margin-left: 45px; font-size: 15px;">
                 Upload your screenshot of payment here
@@ -41,7 +41,15 @@
                         <b>Comfirm</b>
                     </button>
                 </div>
-            </form> 
+            </form>
         </section>
+<script>
+window.addEventListener('DOMContentLoaded', function() {
+   const username = localStorage.getItem('username');
+   const email = localStorage.getItem('email');
+   if (username) document.getElementById('username').value = username;
+   if (email) document.getElementById('email').value = email;
+});
+</script>
 </body>
 </html>
