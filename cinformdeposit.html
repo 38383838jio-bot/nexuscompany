@@ -47,7 +47,7 @@
 window.addEventListener('DOMContentLoaded', function() {
     const user = JSON.parse(localStorage.getItem('user'));
     if (user) {
-        document.getElementById('username').value = user.username;
+        document.getElementById('username').value = user.name;
         document.getElementById('email').value = user.email;
     }
 });
