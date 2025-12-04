@@ -32,6 +32,10 @@
                     <input type="text" id="whorefcode" name="whorefcode" class="input1" placeholder="Who Ref Code" readonly>
                 </div>
                 <br>
+                <div class="me1">
+                    <input type="email" id="email" name="plan selected " class="input1" placeholder=" Insert the Name of the plan you deposited on " required>
+                </div>
+                <br>
                     <b style="margin-left: 45px; font-size: 15px;">
                 Upload your screenshot of payment here
             </b>
@@ -47,7 +51,59 @@
                 </div>
             </form>
         </section>
-<script>
+        <br>
+       <a href="./depo.html">  <div class="mit">
+                    <button class="mity">
+                        <b>Back</b>
+                    </button>
+                </div></a>
+          <section id="plans" class="plans"> 
+        <div class="plan-grid">
+        <a href="depo.html" style="color: white; text-decoration: none;">
+              <div class="plan-card">
+                <i class="fas fa-chart-line"></i>
+                <h3>Regular Plan</h3>
+                <p>Perfect for beginners starting their investment journey.</p>
+                <ul>
+                    <li>Minimun 30$ after 24hr or 2days</li>
+                    <li> Maximun  1,000$ after 24hr </li>
+                    <li>Email support</li>
+                    <li>Instant pay out both in oil and real Estate </li>
+                </ul>
+                <button class="btn">Choose Regular</button>
+            </div>
+       </a>
+          <a href="depo.html"style="color: white; text-decoration: none;">
+              <div class="plan-card">
+                <i class="fas fa-star"></i>
+                <h3>Silver Plan</h3>
+                <p>Ideal for intermediate investors seeking more insights.</p>
+                <ul> 
+                    <li>Minimun 100$ after 3weeks</li>
+                    <li> Maximun  10,000$  </li>
+                    <li>Email support</li>
+                    <li>Instant pay out both in oil and real Estate</li>
+                </ul>
+                <button class="btn">Choose Silver</button>
+            </div>
+          </a>
+          <a href="depo.html" style="color: white; text-decoration: none;">
+            <div class="plan-card">
+                <i class="fas fa-crown"></i>
+                <h3>Golden Plan</h3>
+                <p>Premium features for serious investors and professionals.</p>
+                <ul>
+                   <li>Minimun 20,000$ unlimited</li>
+                    <li> Maximun  500,000$   unlimited </li>
+                    <li>Email support</li>
+                    <li>Instant pay out both in oil and real Estate </li>
+                </ul>
+                <button class="btn">Choose Golden</button>
+            </div>
+          </a> 
+        </div>
+    </section>
+<script> 
 window.addEventListener('DOMContentLoaded', function() {
     const user = JSON.parse(localStorage.getItem('user'));
     if (user) {

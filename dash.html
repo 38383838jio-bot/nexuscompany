@@ -132,7 +132,7 @@
     <br>
     <div class="todays">   
     <div id="adminControls" style="text-align: center; display: none;">
-        <button style="background: #007bff; color: white; border: none; padding: 10px 20px; cursor: pointer;">  <a href="/admincontol" style="color: white; text-decoration: none;">Admin Control</a></button>
+        <button style="background: #007bff; color: white; border: none; padding: 10px 20px; cursor: pointer;">  <a href="/admin.html" style="color: white; text-decoration: none;">Admin Control</a></button>
     </div>
     </div> 
     <br>
@@ -148,9 +148,9 @@
            }, 2000); // 3 second delay
        });
 
-       // Validate if user exists in localStorage, redirect to login if not
+       // Validate if user exists in localStorage, redirect to create acc page if not
        if (!localStorage.getItem('user')) {
-           window.location.href = './login.html';
+           window.location.href = './register.html';
        }
        // Get user data from localStorage
        const user = JSON.parse(localStorage.getItem('user'));
@@ -182,8 +182,8 @@
                    });
                });
            }
-           // ow admin cShontrols if admin is true 
-           if (user.isAdmin) {
+           // show admin controls if admin obj exists
+           if (localStorage.getItem('admin')) {
                document.getElementById('adminControls').style.display = 'block';
            }
        } 
