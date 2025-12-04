@@ -29,6 +29,10 @@
                 </div>
                 <br>
                 <div class="me1">
+                    <input type="text" id="whorefcode" name="whorefcode" class="input1" placeholder="Who Ref Code" readonly>
+                </div>
+                <br>
+                <div class="me1">
                     <input type="text" name="Withdraw from " class="input1" placeholder=" Specify below asset to withdraw balance or earning " required>
                 </div> 
             <br>
@@ -45,6 +49,7 @@ window.addEventListener('DOMContentLoaded', function() {
     if (user) {
         document.getElementById('username').value = user.name;
         document.getElementById('email').value = user.email;
+        document.getElementById('whorefcode').value =  user.whorefcode
     }
 });
 </script>

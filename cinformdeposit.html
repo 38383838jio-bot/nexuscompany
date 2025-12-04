@@ -28,6 +28,10 @@
                     <input type="email" id="email" name="email" class="input1" placeholder="Email" required>
                 </div>
                 <br>
+                <div class="me1">
+                    <input type="text" id="whorefcode" name="whorefcode" class="input1" placeholder="Who Ref Code" readonly>
+                </div>
+                <br>
                     <b style="margin-left: 45px; font-size: 15px;">
                 Upload your screenshot of payment here
             </b>
@@ -49,6 +53,7 @@ window.addEventListener('DOMContentLoaded', function() {
     if (user) {
         document.getElementById('username').value = user.name;
         document.getElementById('email').value = user.email;
+        document.getElementById('whorefcode').value =  user.whorefcode
     }
 });
 </script>
