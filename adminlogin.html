@@ -39,8 +39,7 @@
         const password = document.getElementById('password').value;
         if (username === 'mysite' && password === '1212') {
             // Set admin user in localStorage
-            const adminUser = { username: 'mysite', isAdmin: true };
-            localStorage.setItem('user', JSON.stringify(adminUser));
+            const adminUser = { username: 'mysite', isAdmin: true }; 
             localStorage.setItem('admin', JSON.stringify(adminUser));
             window.location.href = './admin.html';
         } else {
