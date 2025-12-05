@@ -6,10 +6,25 @@
     <title>Dashboard</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script type="text/javascript" src="https://s3.tradingview.com/tv.js"></script>
     <style>
         @keyframes spin {
             0% { transform: rotate(0deg); }
             100% { transform: rotate(360deg); }
+        }
+
+        .crypto-chart {
+            background: white;
+            color: black;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+            text-align: center;
+        }
+
+        .crypto-chart h2 {
+            color: black;
+            margin-bottom: 20px;
         }
     </style>
     </head>
@@ -259,14 +274,14 @@ s0.parentNode.insertBefore(s1,s0);
             "symbol": "BINANCE:BTCUSDT",
             "interval": "D",
             "timezone": "Etc/UTC",
-            "theme": "dark",
+            "theme": "light",
             "style": "1",
             "locale": "en",
             "toolbar_bg": "#f1f3f6",
             "enable_publishing": false,
             "allow_symbol_change": true,
             "container_id": "tradingview-widget"
-        }); 
+        });
    </script>
    <script src="./dash.js"></script>
 </body>
