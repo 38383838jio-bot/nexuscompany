@@ -17,5 +17,5 @@ function StartCode() {
                 earning.innerHTML="200"
                 ballance.innerHTML="500"    
             }            
-}     
+}    
 StartCode();
