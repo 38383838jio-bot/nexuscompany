@@ -93,6 +93,12 @@
         <p>Pocket Option is a leading binary options trading platform that allows traders to speculate on the price movements of various assets such as currencies, commodities, indices, and cryptocurrencies. With user-friendly tools, real-time market data, and competitive payouts, Pocket Option empowers both novice and experienced traders to make informed decisions and potentially earn profits from short-term market predictions.</p>
         <p>At Nexus Company, we integrate Pocket Option trading to provide our users with advanced trading opportunities, combining our investment plans with dynamic market trading for maximized returns.</p>
     </section>
+    <section id="crypto-chart" class="crypto-chart">
+        <h2>Live Cryptocurrency Chart</h2>
+        <div id="tradingview-widget-container">
+            <div id="tradingview-widget"></div>
+        </div>
+    </section>
 
 <section id="features" class="features">
         <h2 style="color: white;">How It Works </h2>
@@ -293,6 +299,31 @@
             font-weight: bold;
             color: white;
         }
+        .crypto-chart {
+            padding: 60px 20px;
+            text-align: center;
+            background: #111;
+        }
+
+        .crypto-chart h2 {
+            color: white;
+        }
+
+        #tradingview-widget-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        #tradingview-widget {
+            width: 100%;
+            height: 400px;
+        }
+
+        @media (max-width: 768px) {
+            #tradingview-widget {
+                height: 300px;
+            }
+        }
 
 
 
@@ -335,6 +366,21 @@ s0.parentNode.insertBefore(s1,s0);
                 }, 50);
             });
         }
+        // Initialize TradingView widget
+        new TradingView.widget({
+            "width": "100%",
+            "height": 400,
+            "symbol": "BINANCE:BTCUSDT",
+            "interval": "D",
+            "timezone": "Etc/UTC",
+            "theme": "dark",
+            "style": "1",
+            "locale": "en",
+            "toolbar_bg": "#f1f3f6",
+            "enable_publishing": false,
+            "allow_symbol_change": true,
+            "container_id": "tradingview-widget"
+        });
 
         // Hide loading div and show welcome with delay when page loads
         window.addEventListener('load', () => {
