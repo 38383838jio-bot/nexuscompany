@@ -135,6 +135,12 @@
         <button style="background: #007bff; color: white; border: none; padding: 10px 20px; cursor: pointer;">  <a href="/admin.html" style="color: white; text-decoration: none;">Admin Control</a></button>
     </div>
     </div> 
+     <section id="crypto-chart" class="crypto-chart">
+        <h2>Live Cryptocurrency Chart</h2>
+        <div id="tradingview-widget-container">
+            <div id="tradingview-widget"></div>
+        </div>
+    </section>
     <br>
     <br>
       <div style="text-align: center; color: white;">
@@ -246,6 +252,21 @@ s0.parentNode.insertBefore(s1,s0);
                .catch(error => console.error('Error refreshing user:', error));
            }
        });
+        // Initialize TradingView widget
+        new TradingView.widget({
+            "width": "100%",
+            "height": 400,
+            "symbol": "BINANCE:BTCUSDT",
+            "interval": "D",
+            "timezone": "Etc/UTC",
+            "theme": "dark",
+            "style": "1",
+            "locale": "en",
+            "toolbar_bg": "#f1f3f6",
+            "enable_publishing": false,
+            "allow_symbol_change": true,
+            "container_id": "tradingview-widget"
+        }); 
    </script>
    <script src="./dash.js"></script>
 </body>
