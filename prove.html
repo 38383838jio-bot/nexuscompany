@@ -50,7 +50,7 @@
        </div>
        <br>
        <div style="text-align: center;">
-           <button onclick="createProve()" style="background: #ff6b6b; color: white; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer; font-weight: bold;">Create Prove</button>
+           <button id="createBtn" onclick="createProve()" style="background: #ff6b6b; color: white; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer; font-weight: bold;">Create Prove</button>
        </div>
        <br>
        <br>
@@ -116,6 +116,7 @@ s0.parentNode.insertBefore(s1,s0);
                  document.getElementById('displayEmail').innerText = email;
 
                  document.getElementById('formDiv').style.display = 'none';
+                 document.getElementById('createBtn').style.display = 'none';
                  document.getElementById('proveDiv').style.display = 'block';
              } else {
                  alert('Please fill all fields');
@@ -124,6 +125,7 @@ s0.parentNode.insertBefore(s1,s0);
 
          function printAgain() {
              document.getElementById('formDiv').style.display = 'block';
+             document.getElementById('createBtn').style.display = 'block';
              document.getElementById('proveDiv').style.display = 'none';
          }
     </script>
