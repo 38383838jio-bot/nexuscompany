@@ -1131,7 +1131,10 @@ body {
             width: 40%;
             margin: auto;
          }
-         
+             .location{
+            width:40%;
+            margin: auto;
+          }            
         .your{
             width: 30%;
             height: 200px; 
