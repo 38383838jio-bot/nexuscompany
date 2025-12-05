@@ -385,11 +385,14 @@ body {
 
 /* ======== Tablets (601px to 900px) ======== */
 @media only screen and (min-width: 601px) and (max-width: 900px) {
+          .location{
+            width:40%;
+            margin: auto;
+          }            
          .whity{
             width: 70%;
             margin: auto;
          }
-         
         .your{
             width: 40%;
             height: 200px; 
@@ -763,6 +766,10 @@ body {
 
 /* ======== Laptops / Desktops (901px to 1440px) ======== */
 @media only screen and (min-width: 901px) and (max-width: 1440px) {
+         .location{
+            width:40%;
+            margin:auto;
+         }
          .whity{
             width: 40%;
             margin: auto;
